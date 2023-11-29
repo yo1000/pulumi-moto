@@ -1,0 +1,20 @@
+services:
+  moto-server:
+    image: motoserver/moto
+
+  pulumi-provisioning:
+    image: pulumi/pulumi
+    depends_on:
+      - moto-server
+    environment:
+      AWS_ACCESS_KEY_ID: moto_access_key
+      AWS_SECRET_ACCESS_KEY: moto_secret_key
+      AWS_REGION: us-east-1
+      AWS_ENDPOINT: http://moto-server:5000
+      PULUMI_CONFIG_PASSPHRASE: changeMe
+    volumes:
+      - ./pulumi.sh:/app/pulumi.sh
+      - ./index.js:/tmp/index.js
+    entrypoint: >
+      sh -c "/app/pulumi.sh"
+
