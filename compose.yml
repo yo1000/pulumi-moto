@@ -14,9 +14,9 @@ services:
       PULUMI_BACKEND_URL: file://~
       PULUMI_CONFIG_PASSPHRASE: changeMe
     volumes:
-      - ./pulumi.sh:/app/pulumi.sh
+      - ./docker-entrypoint.sh:/app/docker-entrypoint.sh
       - ./index.js:/tmp/index.js
       - ./backend.js:/tmp/backend.js
     entrypoint: >
-      sh -c "/app/pulumi.sh"
+      sh -c "/app/docker-entrypoint.sh"
 
