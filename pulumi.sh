@@ -10,7 +10,7 @@ echo '
 aws --endpoint-url=http://moto-server:5000 s3 ls
 
 ## Pulumi login to Local (file://~)
-pulumi login --local
+pulumi login
 
 ## Initialize pulumi project
 pulumi new aws-javascript -y --force
@@ -23,6 +23,8 @@ cp /tmp/index.js ./
 
 ## Provisioning!!!!
 pulumi up -y
+
+pulumi logout
 
 ## Check bucket list after provisioning
 echo '

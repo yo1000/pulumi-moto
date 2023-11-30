@@ -10,6 +10,8 @@ services:
       AWS_ACCESS_KEY_ID: moto_access_key
       AWS_SECRET_ACCESS_KEY: moto_secret_key
       AWS_REGION: us-east-1
+      # https://www.pulumi.com/docs/concepts/state/#local-filesystem
+      PULUMI_BACKEND_URL: file://~
       PULUMI_CONFIG_PASSPHRASE: changeMe
     volumes:
       - ./pulumi.sh:/app/pulumi.sh
