@@ -19,7 +19,8 @@ pulumi new aws-javascript -y --force
 npm install @pulumi/aws
 
 ## Support for initialize directory caused by `pulumi new`
-cp /tmp/index.js ./
+cp /tmp/index.js   ./
+cp /tmp/backend.js ./
 
 ## Provisioning!!!!
 pulumi up -y

@@ -16,6 +16,7 @@ services:
     volumes:
       - ./pulumi.sh:/app/pulumi.sh
       - ./index.js:/tmp/index.js
+      - ./backend.js:/tmp/backend.js
     entrypoint: >
       sh -c "/app/pulumi.sh"
 
